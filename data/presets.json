@@ -1,0 +1,26 @@
+{
+    "presets" : [
+        {
+            "name": "smooth jazz",
+            "Pedals":
+                {
+                    "DST":{
+                        "LVL": 0,
+                        "GAIN": 0,
+                        "SUS":0
+                    }
+                }
+        },
+        {
+            "name": "HARD JIZZZZZZ",
+            "Pedals":
+                {
+                    "DST":{
+                        "LVL": 255,
+                        "GAIN": 255,
+                        "SUS": 255
+                    }
+                }
+        }
+    ]
+}
