@@ -1,0 +1,125 @@
+{"pedals" : [
+    {
+        "name":"Distortion",
+        "configs":[
+            ["LVL", 0, 0],
+            ["GAIN", 0, 0],
+            ["SUS", 0, 0]
+        ]
+    },
+    {
+        "name":"Tremelo",
+        "configs":[
+            ["EFFECT", 0, 0],
+            ["TONE", 0, 0],
+            ["VOL", 0, 0]
+        ]
+    },
+    {
+        "name":"FUZZ",
+        "configs":[
+            ["LVL", 0, 0],
+            ["GAIN", 0, 0],
+            ["SUS", 0, 0]
+        ]
+    }
+],
+"presets":[
+    {
+        "name":"Bread Winner",
+        "configs": {
+            "Distortion":[5,15,1],
+            "Tremelo":[5,15,1],
+            "WAH":[1,1]
+        }
+    },
+    {
+        "name":"",
+        "configs": {
+            "Distortion":[5,15,1],
+            "Tremelo":[5,15,1],
+            "WAH":[1,1]
+        }
+    },
+    {
+        "name":"",
+        "configs": {
+            "Distortion":[5,15,1],
+            "Tremelo":[5,15,1],
+            "WAH":[1,1]
+        }
+    },
+    {
+        "name":"",
+        "configs": {
+            "Distortion":[5,15,1],
+            "Tremelo":[5,15,1],
+            "WAH":[1,1]
+        }
+    },
+    {
+        "name":"",
+        "configs": {
+            "Distortion":[5,15,1],
+            "Tremelo":[5,15,1],
+            "WAH":[1,1]
+        }
+    },
+    {
+        "name":"",
+        "configs": {
+            "Distortion":[5,15,1],
+            "Tremelo":[5,15,1],
+            "WAH":[1,1]
+        }
+    },
+    {
+        "name":"",
+        "configs": {
+            "Distortion":[5,15,1],
+            "Tremelo":[5,15,1],
+            "WAH":[1,1]
+        }
+    },
+    {
+        "name":"",
+        "configs": {
+            "Distortion":[5,15,1],
+            "Tremelo":[5,15,1],
+            "WAH":[1,1]
+        }
+    },
+    {
+        "name":"",
+        "configs": {
+            "Distortion":[5,15,1],
+            "Tremelo":[5,15,1],
+            "WAH":[1,1]
+        }
+    },
+    {
+        "name":"",
+        "configs": {
+            "Distortion":[5,15,1],
+            "Tremelo":[5,15,1],
+            "WAH":[1,1]
+        }
+    },
+    {
+        "name":"",
+        "configs": {
+            "Distortion":[5,15,1],
+            "Tremelo":[5,15,1],
+            "WAH":[1,1]
+        }
+    },
+    {
+        "name":"",
+        "configs": {
+            "Distortion":[5,15,1],
+            "Tremelo":[5,15,1],
+            "WAH":[1,1]
+        }
+    }
+]
+}
