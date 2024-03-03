@@ -1,0 +1,68 @@
+{
+    "presets":[
+        {
+            "name": "Bread Winner",
+            "pedals":[
+                {
+                    "name":"Distortion",
+                    "configs":[
+                        {"name":"LVL","level":5},
+                        {"name":"GAIN","level":15},
+                        {"name":"SUS","level":1}
+
+                    ]
+                },
+                {
+                    "name":"Tremelo",
+                    "configs":[
+                        {"name":"EFFECT","level":5},
+                        {"name":"TONE","level":15},
+                        {"name":"VOL","level":1}
+
+                    ]
+                },
+                {
+                    "name":"FUZZ",
+                    "configs":[
+                        {"name":"LVL","level":5},
+                        {"name":"GAIN","level":15},
+                        {"name":"SUS","level":1}
+
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Smooth Jazz",
+            "pedals":[
+                {
+                    "name":"Distortion",
+                    "configs":[
+                        {"name":"LVL","level":5},
+                        {"name":"GAIN","level":15},
+                        {"name":"SUS","level":1}
+
+                    ]
+                },
+                {
+                    "name":"Tremelo",
+                    "configs":[
+                        {"name":"EFFECT","level":5},
+                        {"name":"TONE","level":15},
+                        {"name":"VOL","level":1}
+
+                    ]
+                },
+                {
+                    "name":"FUZZ",
+                    "configs":[
+                        {"name":"LVL","level":5},
+                        {"name":"GAIN","level":15},
+                        {"name":"SUS","level":1}
+
+                    ]
+                }
+            ]
+        }
+    ]
+}

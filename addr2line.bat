@@ -1,0 +1,1 @@
+C:\Users\srfle\.platformio\packages\toolchain-xtensa-esp32\bin\xtensa-esp32-elf-addr2line.exe -e .pio/build/esp32/firmware.elf

@@ -3,32 +3,81 @@
 #include <vector>
 #include <map>
 #include <ArduinoJson.h>
+#include <SPI.h>
 
-JsonObject PedalConfig::toJson(){
-    JsonObject obj;
-    obj["name"] = name;
-    obj["level"] = level;
-    return obj;
+void PedalConfig::resetLevel(){
+    activeLevel = level;
 }
 
-JsonObject Pedal::toJson(){
-    JsonObject obj;
-    obj["name"] = name;
-    JsonArray arry = obj.createNestedArray("configs");
-    for(PedalConfig config : configs){
-        arry.add(config.toJson());
+void PedalConfig::setPin(bool on){
+    digitalWrite(pin, on);
+}
+
+#define MCP_WRITE 0b00010000
+
+void PedalConfig::setDigiPot(){ 
+    // switch(addr){
+    //     case 0:
+    //         break;
+    //     case 1:
+    //     case 2:
+    //         SPI.transfer(MCP_WRITE+addr);
+    //         SPI.transfer(activeLevel);
+    //         break;
+    //     case 3:
+    //         if(activeLevel>125){
+    //             SPI.transfer(MCP_WRITE+1);
+    //             SPI.transfer(255);
+    //             SPI.transfer(MCP_WRITE+2);
+    //             SPI.transfer(activeLevel*2);
+    //         }else{
+    //             SPI.transfer(MCP_WRITE+1);
+    //             SPI.transfer(activeLevel*2);
+    //             SPI.transfer(MCP_WRITE+2);
+    //             SPI.transfer(0);
+    //         }
+    //         break;
+    // }
+
+    digitalWrite(pin, LOW);
+    SPI.transfer(MCP_WRITE + addr);
+    Serial.printf("SPI: DIGIPOT: %d,%d:%d\n", pin,addr, level);
+    SPI.transfer(activeLevel);
+    digitalWrite(pin, HIGH);
+}
+
+bool Pedal::isChanged(){
+    for(auto& conf : configs){
+        if(conf.activeLevel != conf.level) return true;
     }
-    return obj;
+    return false;
 }
 
-JsonObject Preset::toJson(){
-    JsonObject obj;
-    obj["name"] = name;
-    JsonArray arry = obj.createNestedArray("pedals");
-    for(Pedal p : pedals){
-        arry.add(p.toJson());
+// void Pedal::setLevels(std::vector<int> &configs){
+
+// }
+
+//OLD PRESET
+
+void Preset::setLevels(){
+    for(auto& pedal: pedals){
+        for(auto& config : pedal.configs){
+            config.level = config.activeLevel;
+        }
     }
-    return obj;
 }
 
+void Preset::resetLevels(){
+    for(auto& pedal: pedals){
+        for(auto& conf : pedal.configs){
+            conf.activeLevel = conf.level;
+        }
+    }
+}
 
+bool Preset::isChanged(){
+    for(auto& pedal: pedals){
+        if(pedal.isChanged()) return true;
+    }
+    return false;
+}

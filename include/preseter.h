@@ -6,6 +6,6 @@
 
 namespace Preseter {
 
-    void readConfig(std::vector<Preset> &presets);
-    void saveConfig(std::vector<Preset> &presets);
+    bool readConfig(std::vector<DPreset> &presets);
+    bool saveConfig(std::vector<DPreset> &presets);
 }

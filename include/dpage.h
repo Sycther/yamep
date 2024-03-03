@@ -58,8 +58,8 @@ class DPage {
     virtual void draw(U8G2 &display) = 0;
 
     virtual void set();
-    virtual void next(MenuDial menuDial = UpperKnob) = 0;
-    virtual void prev(MenuDial menuDial = UpperKnob) = 0;
+    virtual void next(MenuDial menuDial = UpperKnob, int speed = 1) = 0;
+    virtual void prev(MenuDial menuDial = UpperKnob, int speed = 1) = 0;
     virtual void select(MenuDial menuDial = UpperKnob) = 0;
 
     // virtual void back();
@@ -73,8 +73,8 @@ class DPage {
 class PresetSelector : public DPage {
     public:
     // std::vector<Preset> presets;
-    Preset preset;
-    std::vector<Preset>::iterator selectedPreset;
+    DPreset preset;
+    std::vector<DPreset>::iterator selectedPreset;
 
     DMenu *menu;
 
@@ -86,8 +86,8 @@ class PresetSelector : public DPage {
     void draw(U8G2 &display);
 
     void set();
-    void next(MenuDial menuDial = UpperKnob);
-    void prev(MenuDial menuDial = UpperKnob);
+    void next(MenuDial menuDial = UpperKnob, int speed = 1);
+    void prev(MenuDial menuDial = UpperKnob, int speed = 1);
     void select(MenuDial menuDial = UpperKnob);
 
     // void back();
@@ -98,7 +98,7 @@ class PedalPage : public DPage {
     // std::vector<Preset> presets;
     // std::vector<Preset>::iterator currPreset;
     std::vector<Pedal>::iterator currPedal;
-    bool changedConfig = false;
+    // bool changedConfig = false;
 
     DMenu *menu;
 
@@ -110,8 +110,8 @@ class PedalPage : public DPage {
     void draw(U8G2 &display);
 
     void set();
-    void next(MenuDial menuDial = UpperKnob);
-    void prev(MenuDial menuDial = UpperKnob);
+    void next(MenuDial menuDial = UpperKnob, int speed = 1);
+    void prev(MenuDial menuDial = UpperKnob, int speed = 1);
     void select(MenuDial menuDial = UpperKnob);
     // void back();
 

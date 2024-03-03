@@ -1,5 +1,6 @@
 #include <U8g2lib.h>
 #include <vector>
+#include <SPI.h>
 #include "dpage.h"
 #include "pedals.h"
 #include "bitmaps.h"
@@ -24,8 +25,10 @@
 class DMenu {
     public:
     U8G2 display;
-    std::vector<Preset> presets;
-    std::vector<Preset>::iterator currPreset;
+    std::vector<DPreset> presets;
+    std::vector<DPreset>::iterator currPreset;
+    // DPreset currPreset;
+    std::vector<Pedal> pedals;
 
     // public:
     DPage *currentPage;
@@ -34,13 +37,21 @@ class DMenu {
 
     DMenu(U8G2 &display);
 
-    void begin(std::vector<Preset> &_presets, PresetSelector *_presetsPage, PedalPage *_pedalPage);
+    bool begin(std::vector<DPreset> &_presets,std::vector<Pedal>& pedals, PresetSelector *_presetsPage, PedalPage *_pedalPage);
 
     void draw();
 
-    void next();
-    void prev();
+    void select(MenuDial menuDial = UpperKnob);
+    void setDigiPotLevel(int cs, int header, int level);
+    void next(MenuDial menuDial = UpperKnob, int speed = 1);
+    void prev(MenuDial menuDial = UpperKnob, int speed = 1);
     void back();
+
+    void setPage(DPage *page);
+    void setPreset();
+    void saveLevels();
+    void resetLevels();
+    void setLevel();
 
     friend class DPage;
     friend class PresetSelector;
